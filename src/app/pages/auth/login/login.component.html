@@ -1,0 +1,15 @@
+<div>
+    <form [style.border]="formBorderStyle" [formGroup]="authForm" (ngSubmit)="submit()">
+        <label style="color: red;" [textContent]="error"></label>
+        <mat-form-field>
+            <mat-label for="email">Email</mat-label>
+            <input matInput required id="email" type="text" formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="password">Jelszó</mat-label>
+            <input matInput required id="password" type="password" formControlName="password">
+        </mat-form-field>
+        <a href="regist">Új fiók!</a>
+        <button mat-button type="submit">Bejelentkezés</button>
+    </form>
+</div>

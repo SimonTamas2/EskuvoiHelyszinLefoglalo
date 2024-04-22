@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "eskuvoi-helyszin": {
+      "hosting": {
+        "eskuvoi-helyszin-lefoglalo": [
+          "eskuvoi-helyszin"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "eskuvoi-helyszin"
+  }
+}

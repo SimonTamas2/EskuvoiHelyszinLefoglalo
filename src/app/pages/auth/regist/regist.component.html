@@ -1,0 +1,31 @@
+<div>
+    <form [style.border]="formBorderStyle" [formGroup]="authForm" (ngSubmit)="submit()">
+        <label style="color:red" [textContent]="error"></label>
+        <mat-form-field>
+            <mat-label for="firstName">Vezetéknév</mat-label>
+            <input matInput required id="firstName" type="text" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="lastName">Keresztnév</mat-label>
+            <input matInput required id="lastName" type="text" formControlName="lastName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="email">Email</mat-label>
+            <input matInput required id="email" type="text" formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="password">Jelszó</mat-label>
+            <input matInput required id="password" type="password" formControlName="password">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="password">Jelszó mégegyszer</mat-label>
+            <input matInput required id="password" type="password" formControlName="passwordAgain">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="phoneNumber">Telefonszám</mat-label>
+            <input matInput required id="phoneNumber" type="text" formControlName="phoneNumber">
+        </mat-form-field>
+        <a href="login">Van fiókom!</a>
+        <button mat-button type="submit">Regisztráció</button>
+    </form>
+</div>

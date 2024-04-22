@@ -1,0 +1,46 @@
+section {
+    text-align: center;
+}
+
+.container {
+    margin: 50px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    margin-inline: auto;
+    width: 80vw;
+    
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    border-bottom: 1px var(--linen) solid;
+}
+
+.main * {
+    font-family: "Dancing Script", cursive !important;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.main h1 {
+    font-size: 3rem;
+}
+
+.search-container {
+    margin: 20px;
+}
+
+mat-form-field {
+    width: 80%;
+}
+
+.search-container mat-label {
+    font-size: 1.4rem !important;
+}

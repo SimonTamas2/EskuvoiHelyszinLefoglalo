@@ -1,0 +1,42 @@
+
+
+.kijelentkezes-button {
+    display: block;
+    color: red !important;
+    margin-inline: auto;
+    margin-top: 50px;
+    font-size: 1.3rem;
+    width: max-content;
+}
+mat-expansion-panel {
+    margin-inline: auto;
+    max-width: 400px;
+}
+
+mat-expansion-panel-header {
+    font-size: 1.3rem;
+}
+
+.sajat-helyszinek {
+    width: 80vw;
+    text-align: center;
+    margin-inline: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    max-width: 600px;
+}
+
+mat-card {
+    padding: 30px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.image-container img {
+    min-width: 200px;
+    width: 100%;
+}

@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -88,6 +89,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "eskuvoi-helyszin-lefoglalo:build:production",
+              "serveTarget": "eskuvoi-helyszin-lefoglalo:serve:production"
+            },
+            "development": {
+              "buildTarget": "eskuvoi-helyszin-lefoglalo:build:development",
+              "serveTarget": "eskuvoi-helyszin-lefoglalo:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

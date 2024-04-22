@@ -1,0 +1,22 @@
+<section>
+    <div class="main">
+        <h1>Esküvői helyszín</h1>
+    </div>
+    <form class="search-container">
+        <mat-form-field>
+            <mat-label><mat-icon svgIcon="serach"></mat-icon> Keresés</mat-label>
+            <input matInput type="text" [formControl]="city"  [matAutocomplete]="auto"/>
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                @for (option of filteredCities | async;track option) {
+                    <mat-option [value]="option">{{option}}</mat-option>
+                    }
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+    <mat-spinner style="margin-inline: auto;" *ngIf="loading"></mat-spinner>
+    <div class="container">
+        <div *ngFor="let location of filteredLocations | async">
+            <app-location [location]="location"></app-location>
+        </div>
+    </div>
+</section>

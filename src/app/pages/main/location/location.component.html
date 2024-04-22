@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-spinner style="margin-inline:auto" *ngIf="loading"></mat-spinner>
+    <mat-card-title>{{ location?.name }}</mat-card-title>
+    <mat-card-subtitle>
+        <div>{{ location?.city }}</div>
+        <div>{{ location?.address }}</div>
+    </mat-card-subtitle>
+    <mat-card-content>
+        <div>
+            {{ location?.description }}
+        </div>
+        <img (click)="zoomImage()" [src]="currentImage?.data" [alt]="currentImage?.name"/>
+        <mat-radio-group>
+            <mat-radio-button [checked]="i==0" (change)="changeImage(i)" *ngFor="let _ of location?.images;index as i" [value]="i-1"></mat-radio-button>
+        </mat-radio-group>
+    </mat-card-content>
+    <mat-card-footer>
+        <div style="font-size: 1.3rem;margin-top:15px">Tulajdonos infók:</div>
+        <div>{{ owner?.email }}</div>
+        <div>{{ owner?.firstName }} {{ owner?.lastName }}</div>
+        <div>{{ owner?.phoneNumber }}</div>
+        <br>
+        <button (click)="interest()" mat-flat-button style="background-color: var(--linen);">Érdeklődés</button>
+    </mat-card-footer>
+</mat-card>

@@ -1,0 +1,52 @@
+<section>
+    <div style="text-align: center;">
+        <h2>Üdv!</h2>
+        <mat-spinner style="margin-inline: auto;" *ngIf="loading"></mat-spinner>
+        <h2>{{ user?.firstName }}  {{ user?.lastName }}</h2>
+        <h3>{{ user?.email }}</h3>
+        <h3>{{ user?.phoneNumber }}</h3>
+    </div>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>Helyszín hozzáadás!</mat-expansion-panel-header>
+        <app-location-maker [user]="user"></app-location-maker>
+    </mat-expansion-panel>
+    <div class="sajat-helyszinek">
+        <h3>Saját helyszínek:</h3>
+        <div class="container">
+                    <div *ngFor="let location of locations">
+                        <mat-tab-group>
+                            <mat-tab label="Helyszín">
+                                <mat-card>
+                                    <mat-card-title>{{ location.name }}</mat-card-title>
+                                    <mat-card-subtitle>
+                                        <div>{{ location.city }}</div>
+                                        <div>{{ location.address }}</div>
+                                    </mat-card-subtitle>
+                                    <mat-card-content>
+                                        <div>
+                                            <div>{{ location.description }}</div>
+                                        </div>
+                                        <mat-grid-list [cols]="location.images.length">
+                                            <mat-grid-tile class="image-container" *ngFor="let image of location.images">
+                                                <img [src]="image.data" [alt]="image.name"/>
+                                            </mat-grid-tile>
+                                        </mat-grid-list>
+                                    </mat-card-content>
+                                    <mat-card-footer>
+                                        <div>Cím : {{ location.address}}</div>
+                                        <div>Tulajdonos : {{ location.owner }}</div>
+                                        <button mat-button style="color: red;" (click)="delete(location)">Törlés</button>
+                                    </mat-card-footer>
+                                </mat-card>
+                            </mat-tab>
+                            <mat-tab label="Foglalások">
+                                <!-- <table mat-table>
+                                    
+                                </table> -->
+                            </mat-tab>
+                        </mat-tab-group>
+                    </div>
+        </div>
+    </div>
+    <button class="kijelentkezes-button" mat-button (click)="logout()">Kijelentkezés</button>
+</section>

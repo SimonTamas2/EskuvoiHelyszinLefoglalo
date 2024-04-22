@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "eskuvoi-helyszin-lefoglalo",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

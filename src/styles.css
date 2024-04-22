@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Oooh+Baby&family=Parisienne&family=Sacramento&display=swap');
+
+:root {
+    --pale-dogwood: #d0b8acff;
+    --champagne-pink: #f3d8c7ff;
+    --linen: #efe5dcff;
+    --baby-powder: #fbfefbff;
+    --white : white;
+    --black : black;
+}
+
+body {
+    margin: 0;
+}
+
+nav * {
+    font-family: "Dancing Script", cursive !important;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.5rem !important;
+}
+
+body *{
+    font-family: "Borel", cursive;
+    font-weight: 500;
+    font-style: normal;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+mat-card *{
+    font-family: "Borel", cursive !important;
+    font-weight: 500;
+    font-style: normal;
+}
+
+mat-card-title {
+    font-size: 1.3rem !important;
+    margin-bottom: 15px !important;
+}
+
+mat-card-subtitle {
+    font-size: 1.1rem !important;
+}
+
+mat-form-field * {
+    font-family: "Dancing Script", cursive !important;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}

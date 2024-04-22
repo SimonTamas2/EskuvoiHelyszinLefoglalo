@@ -1,0 +1,15 @@
+
+
+mat-card {
+    padding: 20px;
+}
+
+mat-card-content {
+    margin-top: 20px;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,25 @@
+nav {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background-color: var(--champagne-pink);
+    padding: 20px;
+    box-shadow: 0 0 5px gray;
+}
+
+nav img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.nav-item a {
+    color: var(--black);
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    text-decoration: underline;
+}

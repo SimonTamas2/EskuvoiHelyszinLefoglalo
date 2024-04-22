@@ -1,0 +1,9 @@
+<div>
+  <input type="file" (change)="upload($event)">
+  <mat-list>
+    <mat-list-item style="max-width: 350px;" *ngFor="let file of selectedFiles;index as i">
+      <button mat-icon-button style="font-size: 0.9rem;color:red" type="button" (click)="remove(i)">X</button>
+      <span style="max-width: 300px;">{{ file.name }}</span>
+    </mat-list-item>
+  </mat-list>
+</div>

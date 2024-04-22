@@ -1,0 +1,30 @@
+<section>
+    <form>
+        <mat-form-field>
+            <mat-label for="name">Név</mat-label>
+            <input matInput type="text" [formControl]="name">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="city">Város</mat-label>
+            <input matInput type="text" [formControl]="city"  [matAutocomplete]="auto">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                @for (option of filteredCities | async;track option) {
+                    <mat-option [value]="option">{{option}}</mat-option>
+                  }
+            </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="address">Cím</mat-label>
+            <input matInput type="text" [formControl]="address">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="description">Leírás</mat-label>
+            <textarea matInput [formControl]="description"></textarea>
+        </mat-form-field>
+        <div>
+            <label for="images">Képek</label>
+            <app-upload-files (filesChanged)="filesChanged($event)"></app-upload-files>
+        </div>
+        <button type="button" mat-button (click)="create()">Létrehozás</button>
+    </form>
+</section>

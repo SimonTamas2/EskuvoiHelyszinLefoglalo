@@ -1,0 +1,14 @@
+<nav>
+    <div class="nav-item">
+        <a href="">Infó</a>
+    </div>
+    <div class="nav-item">
+        <a href="/"><img src="assets/cheers.png"/></a>
+    </div>
+    <div class="nav-item" *ngIf="!loggedInUser">
+        <a href="login">Bejelentkezés</a>
+    </div>
+    <div class="nav-item" *ngIf="loggedInUser">
+        <a href="profil">Profil</a>
+    </div>
+</nav>
