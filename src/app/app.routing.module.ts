@@ -19,6 +19,11 @@ const routes: Routes = [
         path:"profil",
         loadChildren : () => import("./pages/profile/profile.module").then(m => m.ProfileModule),
         canActivate : [AuthGuard]
+    },
+    {
+        path:"info",
+        loadChildren : () => import("./pages/info/info.module").then(m => m.InfoModule),
+        canActivate : [AuthGuard], // követelmények miatt van levédve hogy meglegyen a 2
     }
 ];
 

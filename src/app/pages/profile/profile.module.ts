@@ -11,9 +11,10 @@ import {MatCardModule} from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
+import { ProfileLocationComponent } from './profile-location/profile-location.component';
 
 @NgModule({
-    imports: [CommonModule,MatTableModule,MatTabsModule,NgFor,MatListModule,MatCardModule,ProfileRoutingModule,MatButton,MatProgressSpinnerModule,LocationMakerComponent,MatExpansionModule,MatGridListModule],
+    imports: [CommonModule,ProfileLocationComponent,MatTableModule,MatTabsModule,NgFor,MatListModule,MatCardModule,ProfileRoutingModule,MatButton,MatProgressSpinnerModule,LocationMakerComponent,MatExpansionModule,MatGridListModule],
     exports: [],
     declarations: [ProfileComponent],
     providers: [],

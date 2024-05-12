@@ -14,37 +14,7 @@
         <h3>Saját helyszínek:</h3>
         <div class="container">
                     <div *ngFor="let location of locations">
-                        <mat-tab-group>
-                            <mat-tab label="Helyszín">
-                                <mat-card>
-                                    <mat-card-title>{{ location.name }}</mat-card-title>
-                                    <mat-card-subtitle>
-                                        <div>{{ location.city }}</div>
-                                        <div>{{ location.address }}</div>
-                                    </mat-card-subtitle>
-                                    <mat-card-content>
-                                        <div>
-                                            <div>{{ location.description }}</div>
-                                        </div>
-                                        <mat-grid-list [cols]="location.images.length">
-                                            <mat-grid-tile class="image-container" *ngFor="let image of location.images">
-                                                <img [src]="image.data" [alt]="image.name"/>
-                                            </mat-grid-tile>
-                                        </mat-grid-list>
-                                    </mat-card-content>
-                                    <mat-card-footer>
-                                        <div>Cím : {{ location.address}}</div>
-                                        <div>Tulajdonos : {{ location.owner }}</div>
-                                        <button mat-button style="color: red;" (click)="delete(location)">Törlés</button>
-                                    </mat-card-footer>
-                                </mat-card>
-                            </mat-tab>
-                            <mat-tab label="Foglalások">
-                                <!-- <table mat-table>
-                                    
-                                </table> -->
-                            </mat-tab>
-                        </mat-tab-group>
+                       <app-profile-location [location]="location" (deleteEvent)="delete(location)"></app-profile-location>
                     </div>
         </div>
     </div>

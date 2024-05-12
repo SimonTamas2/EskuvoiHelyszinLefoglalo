@@ -9,7 +9,7 @@ import { environment } from '../environment/environment';
 import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app.routes';
+import { AppRoutingModule } from './app.routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,7 +19,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -32,7 +32,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
   ],
   providers: [],
   bootstrap: [AppComponent]

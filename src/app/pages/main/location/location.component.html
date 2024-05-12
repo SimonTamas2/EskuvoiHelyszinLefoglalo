@@ -7,6 +7,21 @@
     </mat-card-subtitle>
     <mat-card-content>
         <div>
+            {{ this.averageRating }} <mat-icon svgIcon="rating-icon"></mat-icon> ({{ this.ratings?.length }})
+        </div>
+        <br>
+        <div>
+            <div>Értékelés:</div>
+            <mat-radio-group>
+                <mat-radio-button value="1" (change)="changeRating(1)">1</mat-radio-button>
+                <mat-radio-button value="2" (change)="changeRating(2)">2</mat-radio-button>
+                <mat-radio-button value="3" (change)="changeRating(3)">3</mat-radio-button>
+                <mat-radio-button value="4" (change)="changeRating(4)">4</mat-radio-button>
+                <mat-radio-button value="5" (change)="changeRating(5)">5</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <br>
+        <div>
             {{ location?.description }}
         </div>
         <img (click)="zoomImage()" [src]="currentImage?.data" [alt]="currentImage?.name"/>
@@ -20,6 +35,14 @@
         <div>{{ owner?.firstName }} {{ owner?.lastName }}</div>
         <div>{{ owner?.phoneNumber }}</div>
         <br>
-        <button (click)="interest()" mat-flat-button style="background-color: var(--linen);">Érdeklődés</button>
+        <button *ngIf="!this.currentUserReservation" (click)="interest()" mat-flat-button style="background-color: var(--linen);">Érdeklődés</button>
+        <div *ngIf="this.currentUserReservation">
+            <div>Foglalás információk:</div>
+            <div>{{ this.currentUserReservation.date | dateFormat }}</div>
+            <div>Emberek száma: {{ this.currentUserReservation.numberOfPeople }}</div>
+            <div *ngIf="this.currentUserReservation.accepted" style="color: green;">Foglalást a tulajdonos elfogadta!</div>
+            <div *ngIf="!this.currentUserReservation.accepted" style="color: red;">Foglalást a tulajdonos még NEM fogadta el!</div>
+        </div>
+        <button *ngIf="this.currentUserReservation" (click)="removeInterest()" mat-flat-button style="background-color: red;">Foglalás törlése!</button>
     </mat-card-footer>
 </mat-card>

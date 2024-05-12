@@ -1,6 +1,6 @@
 <section>
     <div class="main">
-        <h1>Esküvői helyszín</h1>
+        <h1>Esküvői helyszínek</h1>
     </div>
     <form class="search-container">
         <mat-form-field>
@@ -16,7 +16,7 @@
     <mat-spinner style="margin-inline: auto;" *ngIf="loading"></mat-spinner>
     <div class="container">
         <div *ngFor="let location of filteredLocations | async">
-            <app-location [location]="location"></app-location>
+            <app-location [currentUserReservation]="currentUserReservation(location)" [user]="observableUser" [location]="location"></app-location>
         </div>
     </div>
 </section>

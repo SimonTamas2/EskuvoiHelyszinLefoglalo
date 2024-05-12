@@ -24,7 +24,7 @@ export class UploadFilesComponent{
         alert("Csak png és jpg típusú képet lehet feltölteni!");
         return;
       }
-      if(file.size > 500000){
+      if(file.size > 1000000){
         event.target.value = null;
         alert("A kép túl nagy! (max 1mb)");
         return;

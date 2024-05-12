@@ -1,0 +1,25 @@
+<form>
+    <mat-form-field>
+        <mat-label>Email cím</mat-label>
+        <input matInput type="text" [formControl]="email">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Teljes név</mat-label>
+        <input matInput type="text" [formControl]="fullname">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Telefonszám</mat-label>
+        <input matInput type="text" [formControl]="phoneNumber">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Emberek száma</mat-label>
+        <input min="5" matInput type="number" [formControl]="numberOfPeople">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Dátum</mat-label>
+        <input matInput [matDatepicker]="picker" [formControl]="date">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button mat-button type="button" (click)="submit()">Küldés</button>
+</form>

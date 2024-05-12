@@ -5,6 +5,7 @@ import { UserInfoService } from '../../shared/services/user-info.service';
 import { User } from '../../shared/models/User';
 import { Location } from '../../shared/models/Location';
 import { LocationService } from '../../shared/services/location.service';
+import { Reservation } from '../../shared/models/Reservation';
 
 @Component({
   selector: 'app-profile',

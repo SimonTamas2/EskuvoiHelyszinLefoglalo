@@ -74,9 +74,11 @@ export class LocationMakerComponent implements OnInit{
       await Promise.all(this.files?.map(async file => {
         try {
           let data = await this.blobToBase64(file);
-          compress(data,{
+          let res = await compress(data,{
             max:80000,
           })
+          //@ts-ignore
+          data = res;
           let size = file.size;
           let type = file.type;
           let name = file.name;
