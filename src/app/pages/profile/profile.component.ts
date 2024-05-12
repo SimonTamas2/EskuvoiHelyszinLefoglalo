@@ -63,7 +63,7 @@ export class ProfileComponent implements OnInit{
 
   delete(location : Location) {
       this.locationService.delete(location.owner,location.name).then(()=>{
-        window.location.reload();
+        this.ngOnInit();
       }).catch(error => {
         console.error(error);
       });
